@@ -9,20 +9,35 @@ function checkResult() {
 
     if (age && weight && name) {
 
-        if (isNaN(age)) {
+
+
+        // validator for numeric age and weight
+        if (isNaN(age) || isNaN(weight)) {
+
+            // error message
             document.getElementById('error').style.display = "block";
             document.getElementById("error").innerHTML = "*age and weight must be numeric";
-            return
-        }
-        if (isNaN(weight)) {
-            document.getElementById('error').style.display = "block";
-            document.getElementById("error").innerHTML = "*age and weight must be numeric"; return
+
+
+            // changing color of age and weight to red
+            document.getElementById('name').style.borderColor = 'black'
+            document.getElementById('age').style.borderColor = 'red'
+            document.getElementById('weight').style.borderColor = 'red'
+            return;
         }
 
+        // function execution
         if (age >= 5 && age < 21) {
+            // changing box colors to black
             document.getElementById('error').style.display = "none";
-            display(age, weight, name);
+            document.getElementById('name').style.borderColor = 'black'
+            document.getElementById('age').style.borderColor = 'black'
+            document.getElementById('weight').style.borderColor = 'black'
+            // 
+            display(age, weight, name); //display function 
         } else {
+
+            // this block executes if input is out of range
             document.getElementById('error').style.display = "block";
             document.getElementById("error").innerHTML =
                 "Please enter age in the range 5-20";
@@ -31,8 +46,13 @@ function checkResult() {
 
 
     } else {
+        // this block executes if text fields are empty
         document.getElementById('error').style.display = "block";
+
         document.getElementById("error").innerHTML = "*Please fill all the fields";
+        document.getElementById('name').style.borderColor = 'red'
+        document.getElementById('age').style.borderColor = 'red'
+        document.getElementById('weight').style.borderColor = 'red'
     }
 }
 
@@ -69,3 +89,4 @@ function validateForm(age, weight) {
         }
     }
 }
+

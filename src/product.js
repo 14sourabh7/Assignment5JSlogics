@@ -27,8 +27,11 @@ function addProduct() {
         addElement(arrProduct);
     } else {
 
+        // if text fields are empty
         document.getElementById('error').style.display = "block";
         document.getElementById('error').innerHTML = '*Please fill all the details.'
+
+
     }
 }
 
