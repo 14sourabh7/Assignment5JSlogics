@@ -11,8 +11,8 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      width: 30%;
-      /* margin: auto; */
+      width: 50%;
+      margin: 20px;
       font-size: 2em;
     }
     form > label {
@@ -20,13 +20,13 @@
       display: flex;
       justify-content: space-between;
       margin: 10px 0px;
-      /* font-weight: bold; */
     }
     .formElement {
       height: 40px;
-      width: 50%;
+      width: 60%;
     }
     .btn {
+      background-color: transparent;
       margin-top: 30px;
       height: 50px;
       width: 40%;
@@ -39,10 +39,10 @@
     }
   </style>
   <body>
-    <div>
+    <div id="wrapper">
       <form>
         <label for="name">
-          Name:
+          Name
           <input
             id="name"
             class="formElement"
@@ -51,7 +51,7 @@
         /></label>
 
         <label for="age"
-          >Age:
+          >Age
           <input
             id="age"
             class="formElement"
@@ -60,7 +60,7 @@
         /></label>
 
         <label for="weight"
-          >weight:
+          >weight
           <input
             id="weight"
             class="formElement"
@@ -78,26 +78,25 @@
       <h2 id="result"></h2>
     </div>
     <script>
+      // function validating input for comparison
       function checkResult() {
         var age = document.getElementById("age").value;
         var weight = document.getElementById("weight").value;
         var name = document.getElementById("name").value;
         if (age && weight && name) {
-          console.log(age, weight);
           if (age >= 5 && age < 21) {
-            console.log("calling display");
             display();
           } else {
             document.getElementById("result").innerHTML =
               "Please enter age in the range 5-20";
           }
         } else {
-          console.log("lets stop");
           document.getElementById("result").innerHTML =
             "Please fill all the fields";
         }
       }
 
+      // function to display result
       function display() {
         var age = document.getElementById("age").value;
         var weight = document.getElementById("weight").value;
@@ -110,6 +109,7 @@
           "Hello " + name + " !!! Your weight is " + res;
       }
 
+      // function to compare age
       function validateForm() {
         var age = Number(document.getElementById("age").value);
         var weight = Number(document.getElementById("weight").value);

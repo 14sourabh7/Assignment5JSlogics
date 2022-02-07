@@ -37,12 +37,6 @@
       margin-left: 10px;
     }
 
-    h2 {
-      margin-top: 50px;
-      color: red;
-      font-size: medium;
-      margin-left: 40px;
-    }
     table {
       font-size: large;
       width: 50%;
@@ -92,7 +86,7 @@
           value="ADD PRODUCT"
         />
       </form>
-      <h2 id="empty"></h2>
+
       <div id="product">
         <table>
           <tr>
@@ -104,7 +98,9 @@
       </div>
     </div>
     <script>
-      const arrProduct = [];
+      const arrProduct = []; //array of products
+
+      //   add product function
       function addProduct() {
         var id = document.getElementById("pid").value;
         var name = document.getElementById("pname").value;
@@ -117,6 +113,7 @@
         }
       }
 
+      //   add element function to add element in table
       function addElement(arr) {
         var table =
           "<table> <tr><th>Product Id</th><th>Product Name</th><th>Price</th></tr> ";
