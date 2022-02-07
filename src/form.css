@@ -17,6 +17,8 @@ form > label {
 .formElement {
   height: 40px;
   width: 60%;
+  font-size: large;
+  text-align: center;
 }
 
 .btn {
@@ -34,5 +36,9 @@ form > label {
 
 h2 {
   margin: 50px;
+}
+
+#error {
   color: red;
+  margin-left: 100px;
 }

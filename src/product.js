@@ -6,17 +6,24 @@ function addProduct() {
     var name = document.getElementById("pname").value;
     var price = document.getElementById("price").value;
 
-    // validator for numeric input
-    if (isNaN(price)) {
-        document.getElementById('error').style.display = "block";
-        document.getElementById('error').innerHTML = '*Enter numeric value in price.'
-        return;
-    }
+
 
     // validator for empty fields
     if (id && name && price) {
+
+        // validator for numeric input
+        if (isNaN(price)) {
+            document.getElementById('error').style.display = "block";
+            document.getElementById('price').style.borderColor = 'red';
+            document.getElementById('error').innerHTML = '*Enter numeric value in price.'
+            return;
+        }
+
+
         document.getElementById('error').style.display = "none";
-        arrProduct.push({ id: id, name: name, price: price });
+        document.getElementById('price').style.border = '0.5px solid black';
+
+        arrProduct.push({ id: id, name: name, price: price }); //adding elements to array
         addElement(arrProduct);
     } else {
 

@@ -10,22 +10,29 @@ function checkResult() {
     if (age && weight && name) {
 
         if (isNaN(age)) {
-            document.getElementById("result").innerHTML = "Enter Numeric value only in age and weight";
+            document.getElementById('error').style.display = "block";
+            document.getElementById("error").innerHTML = "*age and weight must be numeric";
             return
         }
-        if (isNaN(weight)) { document.getElementById("result").innerHTML = "Enter Numeric value only in age and weight"; return }
+        if (isNaN(weight)) {
+            document.getElementById('error').style.display = "block";
+            document.getElementById("error").innerHTML = "*age and weight must be numeric"; return
+        }
 
         if (age >= 5 && age < 21) {
+            document.getElementById('error').style.display = "none";
             display(age, weight, name);
         } else {
-            document.getElementById("result").innerHTML =
+            document.getElementById('error').style.display = "block";
+            document.getElementById("error").innerHTML =
                 "Please enter age in the range 5-20";
         }
 
 
 
     } else {
-        document.getElementById("result").innerHTML = "*Please fill all the fields";
+        document.getElementById('error').style.display = "block";
+        document.getElementById("error").innerHTML = "*Please fill all the fields";
     }
 }
 
