@@ -49,6 +49,8 @@ function validateForm() {
         return weightCheck(weight, 31, 40)
 
     }
+
+    // function to check weight 
     function weightCheck(weight, minWeight, maxWeight) {
 
         if (weight < minWeight) {
