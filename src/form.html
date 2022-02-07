@@ -84,12 +84,12 @@
         var name = document.getElementById("name").value;
         if (age && weight && name) {
           console.log(age, weight);
-          if (age > 5) {
+          if (age >= 5 && age < 21) {
             console.log("calling display");
             display();
           } else {
             document.getElementById("result").innerHTML =
-              "Please enter age greater than 4.";
+              "Please enter age in the range 5-20";
           }
         } else {
           console.log("lets stop");
