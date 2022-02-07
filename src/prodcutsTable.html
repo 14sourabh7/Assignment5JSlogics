@@ -6,30 +6,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 40%;
+      /* margin: auto; */
+      font-size: 2em;
+    }
+    form > label {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0px;
+      /* font-weight: bold; */
+    }
+    .formElement {
+      height: 40px;
+      width: 50%;
+    }
+    .btn {
+      margin-top: 30px;
+      height: 50px;
+      width: 40%;
+      font-size: large;
+      font-weight: bold;
+      border: 2px solid;
+      background-color: transparent;
+      margin-left: 10px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      color: red;
+      font-size: medium;
+      margin-left: 40px;
+    }
+    table {
+      font-size: large;
+      width: 50%;
+      margin-top: 70px;
+      text-align: center;
+    }
+
+    td,
+    th {
+      padding: 20px;
+    }
+  </style>
   <body>
-    <div>
+    <div id="wrapper">
       <form>
-        Product Id <input id="pid" type="text" value="pid" required /> Product
-        Name <input id="pname" type="text" value="name" required /> Product
-        Price <input id="price" type="text" value="0" required />
-        <input type="button" onclick="addData()" value="Submit" />
+        <label for="pid">
+          Product Id
+          <input
+            id="pid"
+            class="formElement"
+            type="text"
+            placeholder="enter id"
+        /></label>
+
+        <label for="pname"
+          >Product Name
+          <input
+            id="pname"
+            class="formElement"
+            type="text"
+            placeholder="enter name"
+        /></label>
+
+        <label for="price"
+          >Product Price
+          <input
+            id="price"
+            class="formElement"
+            type="number"
+            placeholder="enter price"
+        /></label>
+
+        <input
+          type="button"
+          class="btn"
+          onclick="addProduct()"
+          value="ADD PRODUCT"
+        />
       </form>
-      <table id="productTable">
-        <tr>
-          <th>Product ID</th>
-          <th>Product Name</th>
-          <th>Price</th>
-        </tr>
-      </table>
+      <h2 id="empty"></h2>
+      <div id="product">
+        <table>
+          <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Price</th>
+          </tr>
+        </table>
+      </div>
     </div>
     <script>
-      function addData() {
+      const arrProduct = [];
+      function addProduct() {
         var id = document.getElementById("pid").value;
         var name = document.getElementById("pname").value;
         var price = document.getElementById("price").value;
+        if (id && name && price) {
+          arrProduct.push({ id: id, name: name, price: price });
+          addElement(arrProduct);
+        } else {
+          alert("Please fill all the details");
+        }
+      }
 
-        console.log(id, name, price);
-        // cnt++;
+      function addElement(arr) {
+        var table =
+          "<table> <tr><th>Product Id</th><th>Product Name</th><th>Price</th></tr> ";
+        for (let i = 0; i < arr.length; i++) {
+          console.log(arr[i]);
+          table +=
+            "<tr><td>" +
+            arr[i].id +
+            "</td><td>" +
+            arr[i].name +
+            "</td><td>" +
+            arr[i].price +
+            "</td></tr>";
+        }
+        document.getElementById("product").innerHTML = table + "</table>";
       }
     </script>
   </body>
