@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+  margin: 20px;
+  font-size: 2em;
+}
+
+form > label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+.formElement {
+  height: 40px;
+  width: 60%;
+}
+
+.btn {
+  background-color: transparent;
+  margin-top: 30px;
+  height: 50px;
+  width: 40%;
+  font-size: large;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 50px;
+}
