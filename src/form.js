@@ -1,17 +1,31 @@
+
+
 // function validating input for comparison
 function checkResult() {
     var age = document.getElementById("age").value;
     var weight = document.getElementById("weight").value;
     var name = document.getElementById("name").value;
+
+
     if (age && weight && name) {
+
+        if (isNaN(age)) {
+            document.getElementById("result").innerHTML = "Enter Numeric value only in age and weight";
+            return
+        }
+        if (isNaN(weight)) { document.getElementById("result").innerHTML = "Enter Numeric value only in age and weight"; return }
+
         if (age >= 5 && age < 21) {
             display(age, weight, name);
         } else {
             document.getElementById("result").innerHTML =
                 "Please enter age in the range 5-20";
         }
+
+
+
     } else {
-        document.getElementById("result").innerHTML = "Please fill all the fields";
+        document.getElementById("result").innerHTML = "*Please fill all the fields";
     }
 }
 

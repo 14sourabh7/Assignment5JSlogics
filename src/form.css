@@ -26,8 +26,13 @@ form > label {
   width: 40%;
   font-size: large;
   font-weight: bold;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: gainsboro;
 }
 
 h2 {
-  margin-top: 50px;
+  margin: 50px;
+  color: red;
 }

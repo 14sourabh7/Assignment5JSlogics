@@ -29,8 +29,16 @@ form > label {
   border: 2px solid;
   background-color: transparent;
   margin-left: 10px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: gainsboro;
 }
 
+#error {
+  color: red;
+  margin: 30px;
+}
 table {
   font-size: large;
   width: 50%;
