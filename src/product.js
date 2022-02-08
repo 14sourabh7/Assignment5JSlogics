@@ -63,15 +63,11 @@ function addElement(arr) {
             "'  />delete</a> </td></tr>";
     }
 
-    // display function call
-    display(table);
+    // displaying the whole array
+    document.getElementById("product").innerHTML = table + "</table>";
+    clearInput();;
 }
 
-// display function
-function display(table) {
-    document.getElementById("product").innerHTML = table + "</table>";
-    clearInput();
-}
 
 // edit function starts here
 function edit(id) {
