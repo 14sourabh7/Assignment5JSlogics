@@ -18,8 +18,8 @@ function addProduct() {
             document.getElementById('error').innerHTML = '*Enter numeric value in price.'
             return;
         }
-        console.log(id)
 
+        // checking if ID already exists
         if (arrProduct.find(x => x.id == id)) {
             document.getElementById('error').style.display = "block";
             document.getElementById('pid').style.borderColor = 'red';
@@ -27,13 +27,19 @@ function addProduct() {
             return;
         }
 
-
+        // changing border colors to black
         document.getElementById('error').style.display = "none";
         document.getElementById('price').style.border = '0.5px solid black';
         document.getElementById('pid').style.border = '0.5px solid black';
 
+
+
         arrProduct.push({ id: id, name: name, price: price }); //adding elements to array
+
+
+        // addElement function call
         addElement(arrProduct);
+        console.log('element added new array', arrProduct)
     } else {
 
         // if text fields are empty
@@ -49,7 +55,7 @@ function addElement(arr) {
     var table =
         "<table> <tr><th>Product Id</th><th>Product Name</th><th>Price</th></tr> ";
     for (let i = 0; i < arr.length; i++) {
-        console.log(arr[i]);
+
         table +=
             "<tr><td>" +
             arr[i].id +
@@ -59,9 +65,13 @@ function addElement(arr) {
             `USD ${arr[i].price}` +
             "</td></tr>";
     }
+
+    // display function call
     display(table)
 }
 
+
+// display function
 function display(table) {
     document.getElementById("product").innerHTML = table + "</table>";
 }
