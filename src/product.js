@@ -33,9 +33,9 @@ function addProduct() {
 
         arrProduct.push({ id: id, name: name, price: price }); //adding elements to array
 
-        // addElement function call
-        addElement(arrProduct);
-        console.log("element added new array", arrProduct);
+        // display function call
+        display(arrProduct);
+
     } else {
         // if text fields are empty
         document.getElementById("error").style.display = "block";
@@ -44,8 +44,8 @@ function addProduct() {
     }
 }
 
-//   add element function to add element in table
-function addElement(arr) {
+//   displaying the whole array together 
+function display(arr) {
     var table =
         "<table> <tr><th>Product Id</th><th>Product Name</th><th>Price</th></tr> ";
     for (let i = 0; i < arr.length; i++) {
@@ -99,7 +99,7 @@ function updateProduct() {
     //   console.log(index, id, pname, price);
     arrProduct[index].name = pname;
     arrProduct[index].price = price;
-    addElement(arrProduct);
+    display(arrProduct);
 
     clearInput();
 
@@ -121,5 +121,5 @@ function deleteProduct(id) {
     console.log(id);
     var index = arrProduct.findIndex((x) => x.id == id);
     arrProduct.splice(index, 1);
-    addElement(arrProduct);
+    display(arrProduct);
 }
