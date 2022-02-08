@@ -36,7 +36,12 @@ form > label {
 .btn:hover {
   background-color: gainsboro;
 }
-
+#btnAdd {
+  display: block;
+}
+#btnUpdate {
+  display: none;
+}
 #error {
   color: red;
   margin: 30px;
@@ -52,4 +57,8 @@ table {
 td,
 th {
   padding: 20px;
+}
+
+a:hover {
+  color: red;
 }

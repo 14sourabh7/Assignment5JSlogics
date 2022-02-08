@@ -38,13 +38,22 @@
             type="text"
             placeholder="enter price"
         /></label>
-
-        <input
-          type="button"
-          class="btn"
-          onclick="addProduct()"
-          value="ADD PRODUCT"
-        />
+        <div class="btn_div">
+          <input
+            id="btnAdd"
+            type="button"
+            class="btn"
+            onclick="addProduct()"
+            value="ADD PRODUCT"
+          />
+          <input
+            id="btnUpdate"
+            type="button"
+            class="btn"
+            onclick="updateProduct()"
+            value="Update Product"
+          />
+        </div>
       </form>
       <!-- error message -->
       <p id="error"></p>
