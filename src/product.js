@@ -18,10 +18,19 @@ function addProduct() {
             document.getElementById('error').innerHTML = '*Enter numeric value in price.'
             return;
         }
+        console.log(id)
+
+        if (arrProduct.find(x => x.id == id)) {
+            document.getElementById('error').style.display = "block";
+            document.getElementById('pid').style.borderColor = 'red';
+            document.getElementById('error').innerHTML = '*id already exist please provide unique id.'
+            return;
+        }
 
 
         document.getElementById('error').style.display = "none";
         document.getElementById('price').style.border = '0.5px solid black';
+        document.getElementById('pid').style.border = '0.5px solid black';
 
         arrProduct.push({ id: id, name: name, price: price }); //adding elements to array
         addElement(arrProduct);
@@ -50,5 +59,9 @@ function addElement(arr) {
             `USD ${arr[i].price}` +
             "</td></tr>";
     }
+    display(table)
+}
+
+function display(table) {
     document.getElementById("product").innerHTML = table + "</table>";
 }
